@@ -4,7 +4,17 @@ export function mountApp(root: HTMLElement, juego: Ahorcado) {
   root.innerHTML = `
     <div data-testid="word"></div>
     <div data-testid="lives"></div>
+    <input type="text" maxlength="1" />
   `;
+
+  const input = root.querySelector("input")!;
+  input.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && input.value) {
+      juego.adivinar(input.value.toUpperCase());
+      input.value = "";
+      render();
+    }
+  });
 
   render();
 
