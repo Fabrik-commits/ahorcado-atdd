@@ -12,3 +12,10 @@ AT3 — Paso 2: lista de UTs
 Al adivinar una letra que no está en la palabra, vidas() se descuenta en 1 (de 6 pasa a 5)
 Al adivinar una letra que sí está en la palabra, vidas() sigue igual (esto ya lo cubrimos en AT2 — no lo repetimos)
 
+AT4 — Paso 2: lista de UTs
+
+Para saber si mostrar "GANASTE", el dominio necesita poder decir si el juego terminó y si ganó. La lógica mínima:
+
+Al adivinar todas las letras de la palabra, gano() devuelve true
+Mientras falten letras por adivinar, gano() devuelve false
+
