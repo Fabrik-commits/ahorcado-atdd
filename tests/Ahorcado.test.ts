@@ -20,4 +20,9 @@ describe("Ahorcado", () => {
     juego.adivinar("A");
     expect(juego.vidas()).toBe(6);
   });
+  it("al adivinar Z en GATO (letra ausente), las vidas bajan a 5", () => {
+    const juego = new Ahorcado("GATO");
+    juego.adivinar("Z");
+    expect(juego.vidas()).toBe(5);
+  });
 });
