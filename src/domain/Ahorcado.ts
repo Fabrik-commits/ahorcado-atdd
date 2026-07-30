@@ -26,4 +26,8 @@ export class Ahorcado {
     }
   }
 
+  gano(): boolean {
+    return [...this.palabra].every((letra) => this.letrasAdivinadas.has(letra));
+  }
+
 }
