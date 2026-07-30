@@ -25,4 +25,9 @@ describe("Ahorcado", () => {
     juego.adivinar("Z");
     expect(juego.vidas()).toBe(5);
   });
+  it("mientras falten letras por adivinar, gano() es false", () => {
+    const juego = new Ahorcado("GATO");
+    juego.adivinar("G");
+    expect(juego.gano()).toBe(false);
+  });
 });
