@@ -5,6 +5,7 @@ export function mountApp(root: HTMLElement, juego: Ahorcado) {
     <div data-testid="word"></div>
     <div data-testid="lives"></div>
     <input type="text" maxlength="1" />
+    <div data-testid="message"></div>
   `;
 
   const input = root.querySelector("input")!;
@@ -21,5 +22,6 @@ export function mountApp(root: HTMLElement, juego: Ahorcado) {
   function render() {
     root.querySelector('[data-testid="word"]')!.textContent = juego.palabraEnmascarada();
     root.querySelector('[data-testid="lives"]')!.textContent = String(juego.vidas());
+    root.querySelector('[data-testid="message"]')!.textContent = juego.gano() ? "GANASTE" : "";
   }
 }
