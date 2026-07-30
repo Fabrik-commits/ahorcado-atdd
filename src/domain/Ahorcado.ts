@@ -19,7 +19,11 @@ export class Ahorcado {
   }
 
   adivinar(letra: string): void {
-    this.letrasAdivinadas.add(letra);
+    if (this.palabra.includes(letra)) {
+      this.letrasAdivinadas.add(letra);
+    } else {
+      this.vidasRestantes--;
+    }
   }
 
 }
