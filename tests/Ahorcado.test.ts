@@ -30,4 +30,12 @@ describe("Ahorcado", () => {
     juego.adivinar("G");
     expect(juego.gano()).toBe(false);
   });
+  it("al adivinar todas las letras de GATO, gano() es true", () => {
+    const juego = new Ahorcado("GATO");
+    juego.adivinar("G");
+    juego.adivinar("A");
+    juego.adivinar("T");
+    juego.adivinar("O");
+    expect(juego.gano()).toBe(true);
+  });
 });
