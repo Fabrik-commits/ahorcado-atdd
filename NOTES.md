@@ -19,3 +19,7 @@ Para saber si mostrar "GANASTE", el dominio necesita poder decir si el juego ter
 Al adivinar todas las letras de la palabra, gano() devuelve true
 Mientras falten letras por adivinar, gano() devuelve false
 
+AT5 — Paso 2: lista de UTs
+Al agotar las 6 vidas (todas las adivinanzas fallidas), perdio() devuelve true
+Mientras queden vidas, perdio() devuelve false
+
