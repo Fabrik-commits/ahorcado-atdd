@@ -43,4 +43,14 @@ describe("Ahorcado", () => {
     juego.adivinar("E");
     expect(juego.perdio()).toBe(false);
   });
+  it("al agotar las 6 vidas, perdio() es true", () => {
+    const juego = new Ahorcado("GATO");
+    juego.adivinar("E");
+    juego.adivinar("I");
+    juego.adivinar("U");
+    juego.adivinar("B");
+    juego.adivinar("C");
+    juego.adivinar("D");
+    expect(juego.perdio()).toBe(true);
+  });
 });
