@@ -23,6 +23,7 @@ palabraEnmascarada(): string {
   }
 
   adivinar(letra: string): void {
+    this.letrasIntentadas.add(letra);
     if (this.palabra.includes(letra)) {
       this.letrasAdivinadas.add(letra);
     } else {
