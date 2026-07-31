@@ -7,10 +7,13 @@ export class Ahorcado {
     this.palabra = palabra;
   }
 
-  palabraEnmascarada(): string {
+palabraEnmascarada(): string {
+    if (this.perdio()) {
+      return this.palabra;
+    }
     return this.palabra
       .split("")
-      .map((letra) => (this.perdio() || this.letrasAdivinadas.has(letra) ? letra : "_"))
+      .map((letra) => (this.letrasAdivinadas.has(letra) ? letra : "_"))
       .join(" ");
   }
 
