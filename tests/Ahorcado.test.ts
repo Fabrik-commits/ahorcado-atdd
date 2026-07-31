@@ -93,4 +93,8 @@ describe("Ahorcado", () => {
     const juego = new Ahorcado("GATO", "Animal");
     expect(juego.categoria()).toBe("Animal");
   });
+  it("al crearse sin categoria, categoria() devuelve vacio", () => {
+    const juego = new Ahorcado("GATO");
+    expect(juego.categoria()).toBe("");
+  });
 });
