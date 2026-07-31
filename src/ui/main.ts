@@ -25,9 +25,14 @@ export function mountApp(root: HTMLElement, juego: Ahorcado) {
     <input type="text" maxlength="1" />
     <div data-testid="message"></div>
     <div data-testid="hangman-parts"></div>
+    <button type="button">Ver pista</button>
   `;
 
   const input = root.querySelector("input")!;
+  const botonPista = root.querySelector("button")!;
+  botonPista.addEventListener("click", () => {
+    mostrarMensaje(juego.categoria());
+  });
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && input.value) {
       const letra = input.value.toUpperCase();
