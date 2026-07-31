@@ -47,4 +47,8 @@ palabraEnmascarada(): string {
     return /^[A-ZÑ]$/.test(letra);
   }
 
+  errores(): number {
+    return 6 - this.vidasRestantes;
+  }
+
 }
