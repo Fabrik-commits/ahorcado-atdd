@@ -12,7 +12,9 @@ export function mountApp(root: HTMLElement, juego: Ahorcado) {
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && input.value) {
       const letra = input.value.toUpperCase();
-      if (juego.letraRepetida(letra)) {
+      if (!juego.entradaValida(letra)) {
+        mostrarMensaje("Entrada inválida");
+      } else if (juego.letraRepetida(letra)) {
         mostrarMensaje("Letra ya ingresada");
       } else {
         juego.adivinar(letra);
