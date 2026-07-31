@@ -63,4 +63,8 @@ describe("Ahorcado", () => {
     juego.adivinar("D");
     expect(juego.palabraEnmascarada()).toBe("GATO");
   });
+  it("antes de intentar una letra, letraRepetida() es false", () => {
+    const juego = new Ahorcado("GATO");
+    expect(juego.letraRepetida("A")).toBe(false);
+  });
 });

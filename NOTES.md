@@ -25,3 +25,7 @@ Mientras queden vidas, perdio() devuelve false
 
 - Al perder, `palabraEnmascarada()` revela la palabra completa
 
+## AT6 — Letra repetida
+- `letraRepetida("A")` es `false` antes de intentarla
+- Después de adivinar "A", `letraRepetida("A")` es `true`
+
