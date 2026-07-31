@@ -32,3 +32,11 @@ Then("se ven {int} partes del ahorcado", async ({ page }, partes: number) => {
 Then("se ve {int} parte del ahorcado", async ({ page }, partes: number) => {
   await expect(page.getByTestId("hangman-parts")).toHaveAttribute("data-parts", String(partes));
 });
+
+Given("una partida con la palabra {string} de categoría {string}", async ({ page }, palabra: string, categoria: string) => {
+  await page.goto(`/?word=${palabra}&categoria=${categoria}`);
+});
+
+When("el jugador presiona {string}", async ({ page }, boton: string) => {
+  await page.getByRole("button", { name: boton }).click();
+});
