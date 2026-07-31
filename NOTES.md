@@ -23,3 +23,5 @@ AT5 — Paso 2: lista de UTs
 Al agotar las 6 vidas (todas las adivinanzas fallidas), perdio() devuelve true
 Mientras queden vidas, perdio() devuelve false
 
+- Al perder, `palabraEnmascarada()` revela la palabra completa
+
