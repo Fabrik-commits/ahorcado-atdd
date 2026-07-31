@@ -84,4 +84,9 @@ describe("Ahorcado", () => {
     const juego = new Ahorcado("GATO");
     expect(juego.errores()).toBe(0);
   });
+  it("al fallar una letra, errores() se incrementa en 1", () => {
+    const juego = new Ahorcado("GATO");
+    juego.adivinar("E");
+    expect(juego.errores()).toBe(1);
+  });
 });
