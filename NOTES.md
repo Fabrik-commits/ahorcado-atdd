@@ -37,3 +37,6 @@ Mientras queden vidas, perdio() devuelve false
 - Al crearse, `errores()` devuelve 0
 - Al fallar una letra, `errores()` se incrementa en 1
 
+## AT10 — Pista y categoría
+- Al crearse con categoría "Animal", `categoria()` devuelve "Animal"
+- Al crearse sin categoría, `categoria()` devuelve ""
