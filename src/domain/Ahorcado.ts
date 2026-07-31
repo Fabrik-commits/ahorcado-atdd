@@ -30,4 +30,8 @@ export class Ahorcado {
     return [...this.palabra].every((letra) => this.letrasAdivinadas.has(letra));
   }
 
+  perdio(): boolean {
+    return this.vidasRestantes === 0;
+  }
+
 }
