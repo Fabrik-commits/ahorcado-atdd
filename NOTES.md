@@ -29,3 +29,7 @@ Mientras queden vidas, perdio() devuelve false
 - `letraRepetida("A")` es `false` antes de intentarla
 - Después de adivinar "A", `letraRepetida("A")` es `true`
 
+## AT7 — Entrada inválida
+- `entradaValida("1")` es `false`
+- `entradaValida("A")` es `true`
+
