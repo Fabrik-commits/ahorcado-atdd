@@ -2,6 +2,7 @@ export class Ahorcado {
   private palabra: string;
   private vidasRestantes: number = 6;
   private letrasAdivinadas: Set<string> = new Set();
+  private letrasIntentadas: Set<string> = new Set();
 
   constructor(palabra: string) {
     this.palabra = palabra;
@@ -35,6 +36,10 @@ palabraEnmascarada(): string {
 
   perdio(): boolean {
     return this.vidasRestantes === 0;
+  }
+
+  letraRepetida(letra: string): boolean {
+    return this.letrasIntentadas.has(letra);
   }
 
 }
