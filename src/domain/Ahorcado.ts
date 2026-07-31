@@ -3,12 +3,18 @@ export class Ahorcado {
   private vidasRestantes: number = 6;
   private letrasAdivinadas: Set<string> = new Set();
   private letrasIntentadas: Set<string> = new Set();
+  private categoriaActual: string;
 
-  constructor(palabra: string) {
+  constructor(palabra: string, categoria: string = "") {
     this.palabra = palabra;
+    this.categoriaActual = categoria;
   }
 
-palabraEnmascarada(): string {
+  categoria(): string {
+    return this.categoriaActual;
+  }
+
+  palabraEnmascarada(): string {
     if (this.perdio()) {
       return this.palabra;
     }
