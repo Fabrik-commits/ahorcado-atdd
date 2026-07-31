@@ -43,4 +43,8 @@ palabraEnmascarada(): string {
     return this.letrasIntentadas.has(letra);
   }
 
+  entradaValida(letra: string): boolean {
+    return /^[A-ZÑ]$/.test(letra);
+  }
+
 }

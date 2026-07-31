@@ -72,4 +72,12 @@ describe("Ahorcado", () => {
     juego.adivinar("A");
     expect(juego.letraRepetida("A")).toBe(true);
   });
+  it('entradaValida("1") es false', () => {
+    const juego = new Ahorcado("GATO");
+    expect(juego.entradaValida("1")).toBe(false);
+  });
+  it('entradaValida("A") es true', () => {
+    const juego = new Ahorcado("GATO");
+    expect(juego.entradaValida("A")).toBe(true);
+  });
 });
