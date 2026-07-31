@@ -33,3 +33,7 @@ Mientras queden vidas, perdio() devuelve false
 - `entradaValida("1")` es `false`
 - `entradaValida("A")` es `true`
 
+## AT8 — Dibujo progresivo
+- Al crearse, `errores()` devuelve 0
+- Al fallar una letra, `errores()` se incrementa en 1
+
