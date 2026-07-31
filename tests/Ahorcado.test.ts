@@ -89,4 +89,8 @@ describe("Ahorcado", () => {
     juego.adivinar("E");
     expect(juego.errores()).toBe(1);
   });
+  it('al crearse con categoria "Animal", categoria() la devuelve', () => {
+    const juego = new Ahorcado("GATO", "Animal");
+    expect(juego.categoria()).toBe("Animal");
+  });
 });
