@@ -22,6 +22,10 @@ export function mountApp(root: HTMLElement, juego: Ahorcado) {
   function render() {
     root.querySelector('[data-testid="word"]')!.textContent = juego.palabraEnmascarada();
     root.querySelector('[data-testid="lives"]')!.textContent = String(juego.vidas());
-    root.querySelector('[data-testid="message"]')!.textContent = juego.gano() ? "GANASTE" : "";
+    root.querySelector('[data-testid="message"]')!.textContent = juego.gano()
+      ? "GANASTE"
+      : juego.perdio()
+        ? "PERDISTE"
+        : "";
   }
 }

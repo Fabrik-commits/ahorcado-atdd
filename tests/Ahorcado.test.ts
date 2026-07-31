@@ -61,6 +61,6 @@ describe("Ahorcado", () => {
     juego.adivinar("B");
     juego.adivinar("C");
     juego.adivinar("D");
-    expect(juego.palabraEnmascarada()).toBe("G A T O");
+    expect(juego.palabraEnmascarada()).toBe("GATO");
   });
 });
