@@ -38,4 +38,9 @@ describe("Ahorcado", () => {
     juego.adivinar("O");
     expect(juego.gano()).toBe(true);
   });
+  it("mientras queden vidas, perdio() es false", () => {
+    const juego = new Ahorcado("GATO");
+    juego.adivinar("E");
+    expect(juego.perdio()).toBe(false);
+  });
 });
