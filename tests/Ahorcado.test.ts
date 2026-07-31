@@ -80,4 +80,8 @@ describe("Ahorcado", () => {
     const juego = new Ahorcado("GATO");
     expect(juego.entradaValida("A")).toBe(true);
   });
+  it("al crearse, errores() es 0", () => {
+    const juego = new Ahorcado("GATO");
+    expect(juego.errores()).toBe(0);
+  });
 });
