@@ -11,9 +11,14 @@ export function mountApp(root: HTMLElement, juego: Ahorcado) {
   const input = root.querySelector("input")!;
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && input.value) {
-      juego.adivinar(input.value.toUpperCase());
+      const letra = input.value.toUpperCase();
+      if (juego.letraRepetida(letra)) {
+        mostrarMensaje("Letra ya ingresada");
+      } else {
+        juego.adivinar(letra);
+        render();
+      }
       input.value = "";
-      render();
     }
   });
 
@@ -22,10 +27,11 @@ export function mountApp(root: HTMLElement, juego: Ahorcado) {
   function render() {
     root.querySelector('[data-testid="word"]')!.textContent = juego.palabraEnmascarada();
     root.querySelector('[data-testid="lives"]')!.textContent = String(juego.vidas());
-    root.querySelector('[data-testid="message"]')!.textContent = juego.gano()
-      ? "GANASTE"
-      : juego.perdio()
-        ? "PERDISTE"
-        : "";
+    mostrarMensaje(juego.gano() ? "GANASTE" : juego.perdio() ? "PERDISTE" : "");
   }
+
+  function mostrarMensaje(texto: string) {
+    root.querySelector('[data-testid="message"]')!.textContent = texto;
+  }
+
 }
