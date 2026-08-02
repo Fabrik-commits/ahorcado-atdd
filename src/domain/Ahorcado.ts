@@ -5,8 +5,17 @@ export class Ahorcado {
   private letrasIntentadas: Set<string> = new Set();
   private categoriaActual: string;
 
-  constructor(palabra: string, categoria: string = "") {
-    this.palabra = palabra;
+constructor(
+    palabraOLista: string | string[],
+    categoria: string = "",
+    selector: (cantidad: number) => number = (n) => Math.floor(Math.random() * n)
+  ) {
+    if (Array.isArray(palabraOLista)) {
+      const idx = selector(palabraOLista.length);
+      this.palabra = palabraOLista[idx];
+    } else {
+      this.palabra = palabraOLista;
+    }
     this.categoriaActual = categoria;
   }
 
