@@ -40,3 +40,7 @@ Given("una partida con la palabra {string} de categoría {string}", async ({ pag
 When("el jugador presiona {string}", async ({ page }, boton: string) => {
   await page.getByRole("button", { name: boton }).click();
 });
+
+Given("una lista de palabras que contiene solo {string}", async ({ page }, palabra: string) => {
+  await page.goto(`/?lista=${palabra}`);
+});
