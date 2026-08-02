@@ -40,3 +40,8 @@ Mientras queden vidas, perdio() devuelve false
 ## AT10 — Pista y categoría
 - Al crearse con categoría "Animal", `categoria()` devuelve "Animal"
 - Al crearse sin categoría, `categoria()` devuelve ""
+
+## AT9 — Palabra al azar
+- Con lista de 1 palabra, esa es la elegida
+- Con selector inyectado, elige el índice que el selector devuelve
+

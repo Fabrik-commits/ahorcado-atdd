@@ -97,4 +97,8 @@ describe("Ahorcado", () => {
     const juego = new Ahorcado("GATO");
     expect(juego.categoria()).toBe("");
   });
+  it('con lista de una sola palabra ["GATO"], la elige', () => {
+    const juego = new Ahorcado(["GATO"]);
+    expect(juego.palabraEnmascarada()).toBe("_ _ _ _");
+  });
 });
