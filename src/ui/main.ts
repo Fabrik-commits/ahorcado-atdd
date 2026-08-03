@@ -63,3 +63,8 @@ export function mountApp(root: HTMLElement, juego: Ahorcado) {
     root.querySelector('[data-testid="message"]')!.textContent = texto;
   }
 }
+
+export function mountInicio(root: HTMLElement, onComenzar: () => void) {
+  root.innerHTML = `<button type="button">Comenzar juego</button>`;
+  root.querySelector("button")!.addEventListener("click", onComenzar);
+}

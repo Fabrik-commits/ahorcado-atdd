@@ -1,11 +1,20 @@
 import { Ahorcado } from "../domain/Ahorcado";
-import { mountApp } from "./main";
+import { mountApp, mountInicio } from "./main";
 
 const params = new URLSearchParams(window.location.search);
-const palabra = params.get("word") ?? "GATO";
+const listaParam = params.get("lista");
+const wordParam = params.get("word");
 const categoria = params.get("categoria") ?? "";
 
-const juego = new Ahorcado(palabra, categoria);
 const root = document.getElementById("app")!;
 
-mountApp(root, juego);
+if (listaParam) {
+  const lista = listaParam.split(",");
+  mountInicio(root, () => {
+    const juego = new Ahorcado(lista, categoria);
+    mountApp(root, juego);
+  });
+} else {
+  const juego = new Ahorcado(wordParam ?? "GATO", categoria);
+  mountApp(root, juego);
+}
