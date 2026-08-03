@@ -101,4 +101,8 @@ describe("Ahorcado", () => {
     const juego = new Ahorcado(["GATO"]);
     expect(juego.palabraEnmascarada()).toBe("_ _ _ _");
   });
+  it("con selector inyectado, elige el indice que el selector devuelve", () => {
+    const juego = new Ahorcado(["GATO", "PERRO"], "Animal", () => 1);
+    expect(juego.palabraEnmascarada()).toBe("_ _ _ _ _");
+  });
 });
