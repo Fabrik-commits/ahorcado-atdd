@@ -44,3 +44,11 @@ When("el jugador presiona {string}", async ({ page }, boton: string) => {
 Given("una lista de palabras que contiene solo {string}", async ({ page }, palabra: string) => {
   await page.goto(`/?lista=${palabra}`);
 });
+
+When("el jugador hace click en la letra {string}", async ({ page }, letra: string) => {
+  await page.getByRole("button", { name: letra, exact: true }).click();
+});
+
+Then("el botón {string} está deshabilitado", async ({ page }, letra: string) => {
+  await expect(page.getByRole("button", { name: letra, exact: true })).toBeDisabled();
+});
