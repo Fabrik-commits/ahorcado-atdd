@@ -45,3 +45,6 @@ Mientras queden vidas, perdio() devuelve false
 - Con lista de 1 palabra, esa es la elegida
 - Con selector inyectado, elige el índice que el selector devuelve
 
+## AT11 — Teclado en pantalla
+- Sin UTs nuevos: se resuelve con `letraRepetida()` (ya existente, de AT6) para decidir qué botones deshabilitar
+
