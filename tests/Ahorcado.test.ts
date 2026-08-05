@@ -112,4 +112,13 @@ describe("Ahorcado", () => {
     juego.reiniciar();
     expect(juego.vidas()).toBe(6);
   });
+  it("al reiniciar despues de ganar, gano() vuelve a false", () => {
+    const juego = new Ahorcado("GATO");
+    juego.adivinar("G");
+    juego.adivinar("A");
+    juego.adivinar("T");
+    juego.adivinar("O");
+    juego.reiniciar();
+    expect(juego.gano()).toBe(false);
+  });
 });
