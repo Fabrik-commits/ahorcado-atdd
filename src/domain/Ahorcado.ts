@@ -66,4 +66,10 @@ constructor(
     return 6 - this.vidasRestantes;
   }
 
+  reiniciar(): void {
+    this.vidasRestantes = 6;
+    this.letrasAdivinadas = new Set();
+    this.letrasIntentadas = new Set();
+  }
+
 }
