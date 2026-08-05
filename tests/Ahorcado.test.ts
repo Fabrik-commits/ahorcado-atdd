@@ -105,4 +105,11 @@ describe("Ahorcado", () => {
     const juego = new Ahorcado(["GATO", "PERRO"], "Animal", () => 1);
     expect(juego.palabraEnmascarada()).toBe("_ _ _ _ _");
   });
+  it("al reiniciar despues de fallar letras, vidas() vuelve a 6", () => {
+    const juego = new Ahorcado("GATO");
+    juego.adivinar("E");
+    juego.adivinar("I");
+    juego.reiniciar();
+    expect(juego.vidas()).toBe(6);
+  });
 });

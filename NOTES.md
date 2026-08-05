@@ -48,3 +48,7 @@ Mientras queden vidas, perdio() devuelve false
 ## AT11 — Teclado en pantalla
 - Sin UTs nuevos: se resuelve con `letraRepetida()` (ya existente, de AT6) para decidir qué botones deshabilitar
 
+## AT12 — Jugar de nuevo
+- Al llamar `reiniciar()`, `vidas()` vuelve a 6
+- Al llamar `reiniciar()`, `gano()` vuelve a false
+
