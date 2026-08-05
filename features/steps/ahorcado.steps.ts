@@ -52,3 +52,11 @@ When("el jugador hace click en la letra {string}", async ({ page }, letra: strin
 Then("el botón {string} está deshabilitado", async ({ page }, letra: string) => {
   await expect(page.getByRole("button", { name: letra, exact: true })).toBeDisabled();
 });
+
+Then("se ve un botón {string}", async ({ page }, boton: string) => {
+  await expect(page.getByRole("button", { name: boton })).toBeVisible();
+});
+
+Then("no se ve el mensaje {string}", async ({ page }, mensaje: string) => {
+  await expect(page.getByTestId("message")).not.toHaveText(mensaje);
+});
