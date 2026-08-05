@@ -33,6 +33,7 @@ export function mountApp(root: HTMLElement, juego: Ahorcado) {
     <div data-testid="message"></div>
     <div data-testid="hangman-parts"></div>
     <button type="button" id="pista">Ver pista</button>
+    <button type="button" id="reiniciar" style="display:none">Jugar de nuevo</button>
     <div id="teclado">
       ${alfabeto.map((l) => `<button type="button">${l}</button>`).join("")}
     </div>
@@ -48,6 +49,11 @@ export function mountApp(root: HTMLElement, juego: Ahorcado) {
 
   root.querySelector("#pista")!.addEventListener("click", () => {
     mostrarMensaje(juego.categoria());
+  });
+
+  root.querySelector("#reiniciar")!.addEventListener("click", () => {
+    juego.reiniciar();
+    render();
   });
 
   root.querySelectorAll("#teclado button").forEach((boton) => {
@@ -70,7 +76,9 @@ export function mountApp(root: HTMLElement, juego: Ahorcado) {
   function render() {
     root.querySelector('[data-testid="word"]')!.textContent = juego.palabraEnmascarada();
     root.querySelector('[data-testid="lives"]')!.textContent = String(juego.vidas());
+    const terminado = juego.gano() || juego.perdio();
     mostrarMensaje(juego.gano() ? "GANASTE" : juego.perdio() ? "PERDISTE" : "");
+    (root.querySelector("#reiniciar") as HTMLButtonElement).style.display = terminado ? "" : "none";
     const dibujo = root.querySelector('[data-testid="hangman-parts"]')!;
     dibujo.setAttribute("data-parts", String(juego.errores()));
     dibujo.innerHTML = dibujoAhorcado(juego.errores());
